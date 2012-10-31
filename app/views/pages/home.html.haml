@@ -1,0 +1,2 @@
+- if @homepage_work
+  = link_to (image_tag @homepage_work.photo_url), works_show_path(year: @homepage_work.year, id: @homepage_work.id, title: @homepage_work.title_to_param)

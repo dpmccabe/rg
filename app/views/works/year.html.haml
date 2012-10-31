@@ -1,0 +1,5 @@
+%h1= params[:year]
+
+- @works.each do |work|
+  .work
+    = link_to (image_tag work.photo_url(:small)), works_show_path(year: work.year, id: work.id, title: work.title_to_param)

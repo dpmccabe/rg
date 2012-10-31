@@ -1,0 +1,16 @@
+.bundle
+db/*.sqlite3
+log/*.log
+tmp/**/*
+public/system/**/*
+*/.DS_Store
+.DS_Store
+__MACOSX/*
+__MACOSX
+.sass-cache/
+tmp
+.powrc
+vendor/cache
+vendor/bundle
+.irbrc
+config/heroku_env.rb

@@ -1,0 +1,11 @@
+.show-one
+  = image_tag @work.photo.url
+  %p
+    = @work.title
+    %br
+    = @work.description
+    %br
+    = @work.dimensions
+
+  %p
+    %strong= link_to "Back to #{@work.year}", work_year_path(year: @work.year)

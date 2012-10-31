@@ -1,0 +1,32 @@
+!!! 5
+%html
+  %head
+    %title Richard Galling
+
+    = csrf_meta_tags
+    %meta{ charset: 'utf-8' }
+    %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=edge,chrome=1' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+    %meta{ name: 'description', content: 'Milwaukee artist Richard Galling' }
+
+    = stylesheet_link_tag 'application', media: 'all'
+
+  %body
+
+    #nav
+      %h1= link_to 'Richard Galling', root_path
+
+      %ul
+        %li
+          Work
+          %ul
+            - for year in work_years
+              %li= link_to year, works_year_path(year: year)
+
+        %li= link_to 'Text', '/text'
+        %li= link_to 'CV', '/cv'
+        %li= link_to 'Contact', '/contact'
+        %li= link_to 'Links', '/links'
+
+    #content
+      = yield

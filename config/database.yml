@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: rg_development
+  username:
+  password:
+  host:
