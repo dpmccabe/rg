@@ -8,6 +8,7 @@ body {
   color: black;
   font-size: 13px;
   font-family: Arial, sans-serif;
+  width: 882px;
 }
 
 p {
@@ -80,7 +81,7 @@ div {
   }
   &#content {
     margin: 20px 0 20px 290px;
-    width: 792px;
+    width: 592px;
   }
   &#featured-image! {}
 }
@@ -249,7 +250,10 @@ table#links {
   }
 }
 
-.work {
-  padding: 0 60px 60px 0;
-  float: left;
+table#work {
+  td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 20px;
+  }
 }

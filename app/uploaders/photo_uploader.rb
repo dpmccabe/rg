@@ -43,7 +43,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   # end
 
   version :small do
-    process :resize_to_fill => [132, 200]
+    process :resize_to_limit => [132, 200]
   end
 
   # version :facebook do
