@@ -14,6 +14,7 @@ gem 'activeadmin'
 gem 'carrierwave'
 gem 'fog'
 gem 'quiet_assets', group: :development
+gem 'powder', group: :development
 gem 'database_cleaner', group: :development, require: false
 gem 'haml', '3.2.0.rc.1'
 gem 'haml-contrib'
