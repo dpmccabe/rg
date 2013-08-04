@@ -1,7 +1,11 @@
 class WorksController < ApplicationController
 
-  def year
+  def image
     @works = Work.where(year: params[:year])
+  end
+
+  def archive
+    @works = Work.where(active: true)
   end
 
   def show

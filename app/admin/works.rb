@@ -4,9 +4,14 @@ ActiveAdmin.register Work do
 
   config.clear_sidebar_sections!
 
+  config.sort_order = 'position_asc'
+  config.paginate = false
+
+  sortable
+
   index do
     column :photo do |obj|
-      image_tag obj.photo_url(:small)
+      image_tag obj.photo_url(:tiny)
     end
     column :year
     column :title
@@ -18,6 +23,8 @@ ActiveAdmin.register Work do
     column :homepage_image do |obj|
       status_tag(obj.homepage_image ? 'yes' : 'no')
     end
+    column :position
+    sortable_handle_column
     default_actions
   end
 
@@ -27,6 +34,7 @@ ActiveAdmin.register Work do
       f.input :title
       f.input :description
       f.input :dimensions
+      f.input :position
       f.input :active
       f.input :homepage_image
       f.input :photo, as: :file, hint: f.template.image_tag(f.object.photo.url)

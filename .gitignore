@@ -14,3 +14,4 @@ vendor/cache
 vendor/bundle
 .irbrc
 config/heroku_env.rb
+pull.sh
