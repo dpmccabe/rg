@@ -2,6 +2,7 @@ Rg::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  get 'image' => 'works#image', as: :image
   get 'archive' => 'works#archive', as: :archive
   get 'work/:id-:title' => 'works#show', as: :works_show
 

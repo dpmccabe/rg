@@ -7,12 +7,16 @@ ActiveAdmin.register Work do
   config.sort_order = 'position_asc'
   config.paginate = false
 
+  scope :currents, default: true
+  scope :archives
+
   sortable
 
   index do
     column :photo do |obj|
       image_tag obj.photo_url(:tiny)
     end
+    column :group
     column :year
     column :title
     column :description
@@ -30,11 +34,11 @@ ActiveAdmin.register Work do
 
   form html: { enctype: 'multipart/form-data' }, multipart: true do |f|
     f.inputs multipart: true do
+      f.input :group, include_blank: false
       f.input :year, collection: (2000..2020)
       f.input :title
       f.input :description
       f.input :dimensions
-      f.input :position
       f.input :active
       f.input :homepage_image
       f.input :photo, as: :file, hint: f.template.image_tag(f.object.photo.url)
