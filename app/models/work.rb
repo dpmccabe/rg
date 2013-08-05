@@ -2,7 +2,7 @@ class Work < ActiveRecord::Base
 
   belongs_to :group
 
-  attr_accessible :active, :description, :dimensions, :homepage_image, :title, :year, :photo
+  attr_accessible :active, :description, :dimensions, :homepage_image, :title, :year, :photo, :group_id
 
   mount_uploader :photo, PhotoUploader
 

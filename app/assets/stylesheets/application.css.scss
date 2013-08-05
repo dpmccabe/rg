@@ -26,9 +26,8 @@ h1, h2, h3, h4, h5, h6, .year-text {
 }
 
 h1 {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   font-size: 13px;
-  font-weight: bold;
 }
 
 h2 {
@@ -78,8 +77,8 @@ hr {
     list-style-type: none;
     padding: 0;
 
-    ul {
-      font-weight: normal;
+    li.sep-after {
+      margin-bottom: 15px;
     }
   }
 }
