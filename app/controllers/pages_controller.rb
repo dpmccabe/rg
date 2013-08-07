@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   end
 
   def home
-    @homepage_work = Work.where(homepage_image: true, active: true).last
+    @homepage_work = Work.where(homepage_image: true).last
   end
 
   def render_404
