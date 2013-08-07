@@ -11,8 +11,8 @@ class Work < ActiveRecord::Base
   validates :title, :description, :dimensions, presence: true
 
   default_scope order: :position
-  scope :currents, joins(:group).where("groups.slug = 'image'").readonly(false)
-  scope :archives, joins(:group).where("groups.slug = 'archive'").readonly(false)
+  scope :currents, joins(:group).where("groups.slug = 'image' and active = true").readonly(false)
+  scope :archives, joins(:group).where("groups.slug = 'archive' and active = true").readonly(false)
 
   def title_to_param
     self.title.parameterize
