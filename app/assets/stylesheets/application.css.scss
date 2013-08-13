@@ -47,9 +47,12 @@ img {
 a {
   color: #000;
   text-decoration: none;
+
   &:hover {
+    text-decoration: none;
     color: #777;
   }
+
   &.anchor {
     text-decoration: none;
   }
@@ -97,5 +100,20 @@ hr {
   a {
     display: block;
     margin: 0 10px 20px 10px;
+  }
+}
+
+.post + .post {
+  margin-top: 20px;
+}
+
+nav.pagination {
+  span {
+    display: inline-block;
+    margin-right: 5px;
+
+    &.current {
+      color: #999
+    }
   }
 }

@@ -8,8 +8,4 @@ class PagesController < ApplicationController
     @homepage_work = Work.where(homepage_image: true).last
   end
 
-  def render_404
-    render '404', status: 404
-  end
-
 end

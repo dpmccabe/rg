@@ -33,7 +33,7 @@ ActiveAdmin.register Work do
   end
 
   form html: { enctype: 'multipart/form-data' }, multipart: true do |f|
-    f.inputs multipart: true do
+    f.inputs do
       f.input :group, include_blank: false
       f.input :year, collection: (2000..2020)
       f.input :title
