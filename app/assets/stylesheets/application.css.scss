@@ -20,7 +20,7 @@ p {
 
 h1, h2, h3, h4, h5, h6, .year-text {
   font-weight: normal;
-  color: #000;
+  color: black;
   margin-top: 0;
   line-height: normal;
 }
@@ -28,6 +28,10 @@ h1, h2, h3, h4, h5, h6, .year-text {
 h1 {
   margin: 0 0 15px 0;
   font-size: 13px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 h2 {
@@ -45,16 +49,12 @@ img {
 }
 
 a {
-  color: #000;
-  text-decoration: none;
+  color: black;
+  text-decoration: underline;
 
   &:hover {
     text-decoration: none;
-    color: #777;
-  }
-
-  &.anchor {
-    text-decoration: none;
+    color: black;
   }
 }
 
@@ -74,7 +74,7 @@ hr {
 
   ul {
     margin: 0 0 10px 0;
-    color: #000;
+    color: black;
     line-height: 1.4;
     font-weight: bold;
     list-style-type: none;
@@ -82,6 +82,10 @@ hr {
 
     li {
       line-height: normal;
+
+      a {
+        text-decoration: none;
+      }
     }
 
     li.sep-after {

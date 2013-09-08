@@ -8,7 +8,7 @@
     - if post_upload.file.url =~ /\.(png|gif|jpg|jpeg)$/
       = image_tag post_upload.file.url
       %p
-        = post_upload.title
+        %strong= post_upload.title
         %br
         = post_upload.description
 
