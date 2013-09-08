@@ -6,6 +6,6 @@ class PostUpload < ActiveRecord::Base
 
   mount_uploader :file, FileUploader
 
-  validates :title, :description, :file, presence: true
+  validates :file, presence: true
 
 end

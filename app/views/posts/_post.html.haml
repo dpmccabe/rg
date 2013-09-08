@@ -7,13 +7,16 @@
   - post.post_uploads.each do |post_upload|
     - if post_upload.file.url =~ /\.(png|gif|jpg|jpeg)$/
       = image_tag post_upload.file.url
-      %p
-        %strong= post_upload.title
-        %br
-        = post_upload.description
+      - if post_upload.title.present?
+        %p
+          %strong= post_upload.title
+          - if post_upload.description.present?
+            %br
+            = post_upload.description
 
     - else
       %p
         = link_to post_upload.title, post_upload.file.url, target: '_blank'
-        %br
-        = post_upload.description
+        - if post_upload.description.present?
+          %br
+          = post_upload.description

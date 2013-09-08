@@ -21,8 +21,8 @@ ActiveAdmin.register Post do
 
     f.inputs 'Post uploads' do
       f.has_many :post_uploads do |g|
-        g.input :title
-        g.input :description
+        g.input :title, hint: 'Required for file uploads (non-images)'
+        g.input :description, hint: '(optional)'
         g.input :file, as: :file, hint: g.object.file.url
       end
     end
