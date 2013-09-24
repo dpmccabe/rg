@@ -3,14 +3,16 @@ class Post < ActiveRecord::Base
   has_many :post_uploads
   accepts_nested_attributes_for :post_uploads
 
-  attr_accessible :body, :title, :post_uploads_attributes
+  attr_accessible :body, :post_uploads_attributes
 
-  validates :body, :title, presence: true
+  validates :body, presence: true
 
-  default_scope order: 'created_at DESC'
+  acts_as_list
 
-  def to_param
-    "#{id}-#{title.parameterize}"
+  default_scope order: :position
+
+  def name
+    "Post #{id}"
   end
 
 end

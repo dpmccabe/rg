@@ -15,7 +15,7 @@ class Work < ActiveRecord::Base
   scope :archives, joins(:group).where("groups.slug = 'archive' and active = true").readonly(false)
 
   def title_to_param
-    self.title.parameterize
+    title.parameterize
   end
 
 end

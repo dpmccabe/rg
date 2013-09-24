@@ -4,18 +4,25 @@ ActiveAdmin.register Post do
 
   config.clear_sidebar_sections!
 
+  config.sort_order = 'position_asc'
+  config.paginate = false
+
+  sortable
+
   index do
     id_column
-    column :title, sortable: false
+    column 'Body' do |obj|
+      truncate(obj.body, length: 100, separator: ' ')
+    end
     column '' do |obj|
       span (link_to 'Preview', post_path(obj), target: '_blank', class: 'member_link view_link')
     end
+    sortable_handle_column
     default_actions
   end
 
   form html: { enctype: 'multipart/form-data' }, multipart: true do |f|
     f.inputs do
-      f.input :title
       f.input :body, hint: 'Use Textile instructions on Dashboard'
     end
 
