@@ -110,6 +110,10 @@ hr {
   margin-top: 20px;
 }
 
+.post *:first-child {
+  margin-top: 0;
+}
+
 nav.pagination {
   span {
     display: inline-block;
