@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   def index
     page = params[:page] || 1
-    @posts = Post.includes(:post_uploads).page(page).per(5)
+    @posts = Post.includes(:post_uploads).page(page).per(20)
   end
 
   def show
