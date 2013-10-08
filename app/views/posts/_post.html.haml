@@ -3,14 +3,14 @@
     #{post.body}
 
   - post.post_uploads.each do |post_upload|
-    - if post_upload.file.url =~ /\.(png|gif|jpg|jpeg)$/
-      = image_tag post_upload.file.url
-      - if post_upload.title.present?
+    - if post_upload.file.url =~ /\.(png|gif|jpg|jpeg)$/i
+      = image_tag post_upload.file.url, class: 'post-upload'
+      - if post_upload.title.present? || post_upload.description.present?
         %p
           %strong= post_upload.title
-          - if post_upload.description.present?
+          - if post_upload.title.present? && post_upload.description.present?
             %br
-            = post_upload.description
+          %span.description= post_upload.description
 
     - else
       %p
