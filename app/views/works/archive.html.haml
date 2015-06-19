@@ -1,5 +1,6 @@
-- @works.each_slice(4) do |work_group|
-  .row
-    - work_group.each do |work|
-      .span3.work-thumbnail
-        = link_to (image_tag work.photo_url(:small)), works_show_path(id: work.id, title: work.title_to_param)
+#works
+  - @works.each_slice(4) do |work_group|
+    .work_group
+      - work_group.each do |work|
+        .work
+          = link_to (image_tag work.photo_url(:small)), works_show_path(id: work.id, title: work.title_to_param)
